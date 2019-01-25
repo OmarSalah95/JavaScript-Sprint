@@ -6,7 +6,9 @@
   * The last parameter accepts a callback 
   * In the body of the function return the callback with the two parameters that you created
 */
-
+function consume (a, b, cb) {
+  return cb(a, b);
+}
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -14,11 +16,19 @@
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+add = (a,b) => a+b;
+sub = (a,b) => a-b;
+multiply = (a,b) => a*b;
+
+greeting (first, last) => `Hello ${first} ${last}, nice to meet you!`;
+
+
+// console.log(greeting(omar, salah));
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// consume(2,2,add); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+ consume(2,2,add); // 4
+ consume(10,16,multiply); // 160
+ consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
@@ -27,6 +37,8 @@
 
 // Explanation: 
 
+Below in the code you can see that internal is defined not within the nested function but within the block of code that nested function is itself nested in.
+This is the definition of closure.
 
 const external = "I'm outside the function";
 
