@@ -69,25 +69,25 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 
 // Method that can be used for ALL
-// const universities = [];
-// const contactInfo = [];
-// const uni = [];
+const universities = [];
+const contactInfo = [];
+const uni = [];
 
-// for (let i = 0; i < graduates.length; i++) {
-//   const graduate = graduates[i];
-//   const { university, first_name, email } = graduate;
+for (let i = 0; i < graduates.length; i++) {
+  const graduate = graduates[i];
+  const { university, first_name, email } = graduate;
 
-//   universities.push(university);
+  universities.push(university);
 
-//   contactInfo.push(`${first_name} ${email}`);
+  contactInfo.push(`${first_name} ${email}`);
 
-//   if (university.includes('Uni')) {
-//     uni.push(university);
-//   }
-// }
+  if (university.includes('Uni')) {
+    uni.push(university);
+  }
+}
 
 // method 1
- const universities = graduates.map((grad) => grad.university).sort();
+//  const universities = graduates.map((grad) => grad.university).sort();
 
 // method 2
 // const universities = []
@@ -126,13 +126,13 @@ Log the result of your new array. */
 // const uni = graduates.filter((grad) => grad.university.includes('Uni')).map(grad => grad.university).sort();
 
 // Method 2
-const uni = []
-for (let i = 0; i < graduates.length; i++) {
-     const grad = graduates[i];
-     if (grad.university.includes('Uni')) {
-          uni.push(grad.university);
-        }
-}
+// const uni = []
+// for (let i = 0; i < graduates.length; i++) {
+//      const grad = graduates[i];
+//      if (grad.university.includes('Uni')) {
+//           uni.push(grad.university);
+//         }
+// }
 console.log(uni);
 
 
@@ -152,12 +152,33 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 {"animal_name":"Hawk-eagle, crowned","population":10,"scientific_name":"Spizaetus coronatus","state":"Florida"},
 {"animal_name":"Australian pelican","population":5,"scientific_name":"Pelecanus conspicillatus","state":"West Virginia"}];
 
+// method used for ALL
+
+const animalNames = [];
+const lowerCase = [];
+const largerPopulation = [];
+let populationTotal = 0;
+
+for (let i = 0; i < zooAnimals.length; i++) {
+  const animal = zooAnimals[i];
+  const { animal_name, scientific_name, population} = animal;
+  populationTotal += population;
+  animalNames.push(animal_name + scientific_name);
+
+  lowerCase.push(animal_name.toLowerCase() );
+
+  if (population > 5 ) {
+    largerPopulation.push(animal);
+  }
+
+}
+
 /* Request 1: .forEach()
 
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const animalNames = zooAnimals.forEach((animal) => {this.name = animal.animal_name, this.scientific = animal.scientific_name});
+// const animalNames = zooAnimals.forEach((animal) => {this.name = animal.animal_name, this.scientific = animal.scientific_name});
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -166,7 +187,7 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = zooAnimals.map(animal => animal.animal_name.toLowerCase());
+// const lowerCase = zooAnimals.map(animal => animal.animal_name.toLowerCase());
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -174,7 +195,7 @@ console.log(lowerCase);
 The zoos are concerned about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = zooAnimals.filter(animal => animal.population < 5);
+// const largerPopulation = zooAnimals.filter(animal => animal.population < 5);
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -182,7 +203,7 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = zooAnimals.reduce((acc, animal,) => acc + animal.population, 0);
+// const populationTotal = zooAnimals.reduce((acc, animal,) => acc + animal.population, 0);
 console.log(populationTotal);
 
 
@@ -193,3 +214,4 @@ Stretch: If you haven't already, convert your array method callbacks into arrow 
 */
 
 // I did all in arrow notation.... does that mean I hit stretch?
+// I also now added using for loops instead of array methods for the Array section.
