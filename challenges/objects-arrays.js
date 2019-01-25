@@ -143,3 +143,4 @@ Stretch: If you haven't already, convert your array method callbacks into arrow 
 
 */
 
+// I did all in arrow notation.... does that mean I hit stretch?
