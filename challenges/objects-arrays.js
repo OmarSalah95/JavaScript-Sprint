@@ -130,7 +130,7 @@ const uni = []
 for (let i = 0; i < graduates.length; i++) {
      const grad = graduates[i];
      if (grad.university.includes('Uni')) {
-          uni.push(university);
+          uni.push(grad.university);
         }
 }
 console.log(uni);
