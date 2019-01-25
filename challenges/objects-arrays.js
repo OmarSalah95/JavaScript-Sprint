@@ -65,10 +65,27 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 {"id":9,"first_name":"Michail","university":"Universidad Católica de Ávila","email":"mrome8@shinystat.com"},
 {"id":10,"first_name":"Hube","university":"Universitat Rovira I Virgili Tarragona","email":"hlethbrig9@foxnews.com"}]
 
-/* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
-
-
+/* Request 1: Create a new array called universities that contains all the univeristies in the graduates array. 
 Once you have the new array created, sort the universities alphabetically and log the result. */
+
+// Method that can be used for ALL
+// const universities = [];
+// const contactInfo = [];
+// const uni = [];
+
+// for (let i = 0; i < graduates.length; i++) {
+//   const graduate = graduates[i];
+//   const { university, first_name, email } = graduate;
+
+//   universities.push(university);
+
+//   contactInfo.push(`${first_name} ${email}`);
+
+//   if (university.includes('Uni')) {
+//     uni.push(university);
+//   }
+// }
+
 // method 1
  const universities = graduates.map((grad) => grad.university).sort();
 
@@ -90,15 +107,32 @@ Name email@example.com
 
 Log the result of your new array. */
 // Method 1
-const contactInfo = graduates.map(grad => (`${grad.first_name} ${grad.email}`));
+// const contactInfo = graduates.map(grad => (`${grad.first_name} ${grad.email}`));
 
 // method 2
-
-console.log(contactInfo);
+// const contactInfo = []
+// for (let i = 0; i < graduates.length; i++) {
+//   const grad = graduates[i];
+//   const name = grad.first_name;
+//   const email = grad.email;
+//   const gradInfo = name + ' ' + email; // `${name} ${email}`
+// contactInfo.push(gradInfo)
+// }
+// console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = graduates.filter((grad) => grad.university.includes('Uni')).map(grad => grad.university).sort();
+//  Method 1
+// const uni = graduates.filter((grad) => grad.university.includes('Uni')).map(grad => grad.university).sort();
+
+// Method 2
+const uni = []
+for (let i = 0; i < graduates.length; i++) {
+     const grad = graduates[i];
+     if (grad.university.includes('Uni')) {
+          uni.push(university);
+        }
+}
 console.log(uni);
 
 
