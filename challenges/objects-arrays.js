@@ -5,9 +5,19 @@
   Use this pattern to create your objects: 
   object name, diet, weight, length, period
 */
+class DinoMaker{
+  constructor(name, diet, weight, length, period){
+    this.name = name;
+    this.diet = diet;
+    this.weight = weight;
+    this.length =length;
+    this.period = period;
+  }
 
+}
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceious
-const dinosaur1 = {
+const dinosaur1 = // new DinoMaker(tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceious)
+ {
   name : 'Tyrannosaurus',
   diet : 'Carnivorous',
   weight : '7000kg',
@@ -15,7 +25,8 @@ const dinosaur1 = {
   period : 'Late Cretaceious', 
 }
 // // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
-const dinosaur2 = {
+const dinosaur2 = // new DinoMaker(stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic)
+{
   name : 'stegosaurus',
   diet : 'herbivorous',
   weight : '2000kg',
@@ -23,7 +34,8 @@ const dinosaur2 = {
   period : 'Late Jurassic'
 }
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceious
-const dinosaur3 = {
+const dinosaur3 = // new DinoMaker(velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceious)
+{
   name : 'velociraptor',
   diet : 'carnivorous',
   weight : '15kg',
@@ -239,8 +251,8 @@ let populationTotal = 0;
 for (let i = 0; i < zooAnimals.length; i++) {
      const animal = zooAnimals[i];
      populationTotal += animal.population
-console.log(populationTotal);
-}
+    }
+    console.log(populationTotal);
 
 /* 
 
